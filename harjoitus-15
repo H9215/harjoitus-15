@@ -1,0 +1,53 @@
+/*jesse väänänen 30.10.2014
+
+Harjoitus 15 (Palautus vko 45)
+
+TäSSä TEHTÄVÄSSÄ ON KÄYTETTÄVÄ C-kielen primitiivisiä merkkitaulukoita!
+
+Tee ohjelma, joka kysyy käyttäjältä 17 merkkiä
+pitkän merkkijonon (ei välilyäntejä).
+a) Ohjelma tulostaa merkkijonon käänteisessä järjestyksessä näytälle
+(tulostus tyyppiä "cout << mjono1[4];" jne)
+b) Ohjelma kääntää annetun merkkijonon toiseen
+merkkijonoon ja tulostaa sen näytälle
+(tulostus tyyppiä "cout << mjono2;")
+c) merkkijono voi olla kuinka pitkä
+tahansa (max 100 kirjainta).
+Syätetyn merkkijonon pituutta ei saa
+laskea millään kirjastofunktiolla
+(esim. lenght tms.) Ohjelma
+tutkii onko annettu merkkijono
+palindromi ja ilmoittaa sen käyttäjälle.
+Välilyännit jonossa ovat sallittuja.
+
+Käyttäjä syättää jonon: ABC_Kissa_kavelee
+ohjelma tulostaa: eelevak_assiK_CBA*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	char jono2[17 + 1];
+	char jono1[17 + 1];
+	
+	int ind1 = 16;
+	int ind2 = 0;
+	cout << "anna 17 merkkiä pitkä merkkijono: \n";
+		cin >> jono1;
+		//A
+		/*cout << jono1 << "\n";
+		for (ind=16;ind >= 0 ;ind--)
+			cout << jono1[ind];
+		cout << "\n";
+	*/
+	//b
+		//for (ind1 = 16; ind1 >= 0; ind1--)
+		for (ind1 = 16, ind2 = 0; ind1 >= 0; ind1--, ind2++)
+		{
+			jono2[ind2] = jono1[ind1];
+		}
+
+
+	jono2[17] = '\0';
+	cout << jono2;
+}
